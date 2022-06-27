@@ -137,8 +137,7 @@ Type is the type of an activity.
 For Task 2, you are to embellish your web service to add logging, analysis, and reporting capabilities.  In other words, you are to create a web-based dashboard to your web service that will display information about how your service is being used. This will be web-page interface designed for laptop or desktop browser, not for mobile. In order to display logging and analytical data, you will have to first store it somewhere.  For this task, you are required to store your data in a noSQL database, or more specifically a MongoDB, database hosted in the cloud.
 
 The following is a diagram of the components in Task 2.
-![Task 2 Diagram](docs/Project4-Diagram.png)
-
+![](image/Diagram2.png)
 
 My application takes a username string from the user, and to give user recommend activity by clicking“Find Activity”Button. User is able to choose“Do it”or“ Try another activity”by clicking the corresponding button and also able to return to find activity just by clicking“Back to find activity”button.
 And my web application will record all operations from clients. Those records will be processed by analysis functions. User will first see three tables of analysis, they are“High frequency Activity Types TOP 10”,“Just DO IT Activities TOP 10”and“DISLIKE Activities
@@ -149,30 +148,7 @@ Or
 https://frozen-castle-25997.herokuapp.com/index.jsp
 
 1. Log useful information
-   In my web application, I logged useful information as the below table shows:
-   Name	Meaning	Example
-   Action
-   Name	The name of the operation.	Client Request, Request API
-   User	The   name   of   the   user   from android client input.	John
-   Action Time	The exactly date and time when this action performed.	2022-03-30T04:50:07.161
-   Activity ID	The id of an activity.	6553978
-   Client	The name of the client.	Mozilla/5.0, okhttp/4.9.3
-   Client
-   Request	HTTP request method and target route.	GET /activity/doit
-   Client Reply	The content of reply to client.	REPLY:  name:  Look at  pictures and videos of cute animals, id: 2565076,
-   type: relaxation, result: true, message: ""
-   3rd  Request	HTTP  request  method and  URL to 3rd  party.	GET
-   http://www.boredapi.com/api/activity/
-   3rd  Reply	The  content  of  reply  from  3rd	REPLY:   activity   "Uninstall   unused
-
-
-
-
-
-
-
-	party.	apps  from  your  devices"  with  type "busywork" KEY(2850593) price: 0.0, participants: 1, accessibility: 0.0, link:
-
+   ![](image/format)
 
 
 2. Store the log information in a database
