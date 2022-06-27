@@ -10,8 +10,8 @@ This project has 2 tasks:
 ## Task 1: Mobile to Cloud Application
 Design and build a distributed application that works between a mobile phone and the cloud. Specifically, develop a native Android application that communicates with a web service that you deployed to Heroku.
 
-The following is a diagram of the components in Task 1.  
-![Task 2 Diagram](docs/Project4-Diagram-Task1.png)
+The following is a diagram of the components in Task 1. 
+![](image/Diagram1.png)
 
 The web service deployed to Heroku should be a simple RESTful API.
 
