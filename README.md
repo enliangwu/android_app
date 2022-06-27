@@ -33,6 +33,7 @@ Here is a screenshot of the layout before user has found any activity.
 ### 1.2  Requires input from the user
 
 Here is a screenshot of user having input his/her name.
+
 ![](image/Picture2.png)
 
 ### 1.3  Makes  an  HTTP  request  (using  an  appropriate HTTP method) to your web service
@@ -152,7 +153,8 @@ The dashboard URL is: https://frozen-castle-25997.herokuapp.com/
 Or https://frozen-castle-25997.herokuapp.com/index.jsp
 
 1. Log useful information
-   ![](image/format.png)
+
+![](image/format.png)
 
 
 2. Store the log information in a database
@@ -188,6 +190,9 @@ Or https://frozen-castle-25997.herokuapp.com/index.jsp
 
 ## 3. Display operations analytics and full logs on a web-based dashboard
    Here is a screenshot of how they being displayed to user:
+   
+   ![](image/dashboard_ranking1.png)
+   ![](image/dashboard_ranking2.png)
 
 
 ## 3.1 A unique URL addresses a web interface dashboard for the web service.
@@ -197,15 +202,17 @@ The unique URL address is: https://frozen-castle-25997.herokuapp.com/index.jsp
 
 ## 3.2 The dashboard displays at least 3 interesting operations analytics.
 
-"High frequency Activity Types TOP 10", "Just DO IT Activities TOP 10" and "DISLIKE Activities TOP 10”are my 3 interesting operations analytics.
-High frequency Activity Types TOP 10:
-Among those random activities I grouped them by the types of activities. And counted the getting times of type of activity. Sorted by getting times by descending order.
-Just DO IT Activities TOP 10: The top 10 activities user clicked“DO IT!”button to.           DISLIKE Activities TOP 10: The top 10 activities user clicked“TRY ANOTHER”button to.
+"High frequency Activity Types TOP 10", "Just DO IT Activities TOP 10" and "DISLIKE Activities TOP 10" are my 3 interesting operations analytics.
+
+High frequency Activity Types TOP 10:Among those random activities I grouped them by the types of activities. And counted the getting times of type of activity. Sorted by getting times by descending order.
+Just DO IT Activities TOP 10: The top 10 activities user clicked "DO IT!" button to. 
+DISLIKE Activities TOP 10: The top 10 activities user clicked "TRY ANOTHER" button to.
 
 
-3.3 The dashboard displays formatted full logs.
+## 3.3 The dashboard displays formatted full logs.
 
 Considering a mess of things will show in dashboard page, I moved full logs to another url which is https://frozen-castle-25997.herokuapp.com/logs.jsp and there also a link in dashboard page.
+```
 <a href=”logs.jsp”>View Full Logs</a>
 The formatted full logs table was implemented by tags in jsp looping:
 <% for (ActivityLog log : logs) { %>
@@ -221,16 +228,13 @@ The formatted full logs table was implemented by tags in jsp looping:
 <td><%=log.getApiReplyInfo()%></td>
 </tr>
 <% } %>
+```
 Here is a screenshot of full logs page:
+![](image/log.png)
 
 
-
-
-
-
-
-
-4. Deploy the web service to Heroku
+## 4. Deploy the web service to Heroku
    I used a tomcat docker image to deploy to Heroku.
    ROOT.war package and tomcat_starter.sh script are built into this image.
-   After my docker image being pushed to Heroku web application“frozen-castle-25997”. My web service is available at: https://frozen-castle-25997.herokuapp.com/
+   After my docker image being pushed to Heroku web application“frozen-castle-25997”. 
+   My web service is available at: https://frozen-castle-25997.herokuapp.com/
