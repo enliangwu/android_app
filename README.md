@@ -38,14 +38,14 @@ Here is a screenshot of user having input his/her name.
 ### 1.3  Makes  an  HTTP  request  (using  an  appropriate HTTP method) to your web service
 
 My  application  does  an  HTTP  GET  request  in  GetActivity.java.  
-The  http  request  is "https://frozen-castle-25997.herokuapp.com/activity/user=" + userName
+The  http  request  is "https://frozen-castle-25997.herokuapp.com/activity/user=" + `userName`
 (Where userName is the user inputted name).
 
 ### 1.4  Receives and parses an XML or JSON formatted
 reply from your web service
 
 An example of the JSON reply is:
-```JSON
+```
 {
     result: true,
     name: "Have a paper airplane contest with some friends",
@@ -59,6 +59,7 @@ An example of the JSON reply is:
 ### 1.5  Displays new information to the user
 
 Here is a screenshot after user clicking "Find Activity" button.
+
 ![](image/Picture3.png)
 
 The random activity type and name will show to the user. 
@@ -68,6 +69,7 @@ Then user can choose to do this activity by clicking "DO IT!" button or get anot
 
 User can just click the "BACK TO FIND ACTIVITY" button to go back to find activity.
 Here is a screenshot of my application restore to default view and "Find Activity" button is enabled again. User can input another name now.
+
 ![](image/Picture4.png)
 
 
@@ -82,19 +84,22 @@ The project directory name is: `Project4Task1`
 ### 2.1  Implement a simple (can be a single path) API.
 
 In my web app project:
-Controller: leow/project4task1/ActivityProvider.java
+Controller: `leow/project4task1/ActivityProvider.java`
 Route:
+```
 /activity for getting a random activity
 /activity/doit client action do this activity
 /activity/dislike client action dislike this activity
+```
 
 
 ### 2.2  Receives an HTTP request from the native Android
 application
 
 `/activity` receives an HTTP GET request with parameter user and passes the user to the controller.
-/activity/doit receives an HTTP GET request with 2 parameters: user and id, user is user name from android client, id is an id of an activity. They are both been passing to the controller.
-/activity/dislike is the same as /activity/doit.
+`/activity/doit` receives an HTTP GET request with 2 parameters: user and id, user is user name from android client, id is an id of an activity. 
+They are both been passing to the controller.
+`/activity/dislike` is the same as `/activity/doit`.
 
 ### 2.3  Executes   business   logic   appropriate   to   your
 application.  This   includes  fetching  XML   or  JSON information from some 3rd party API and processing the response.
@@ -113,10 +118,11 @@ It will reply a JSON formatted random activity information to my web application
 ```
 ActivityProvider.java will package the useful information to android client.
 
-### 2.4  Replies to the Android application with an XML or JSON   formatted   response.   The   schema   of   the
-response can be of your own design.
-makeJSONResponse method in ActivityProvider.java will make a JSON response which
+### 2.4  Replies to the Android application with an XML or JSON formatted response. The schema of the response can be of your own design.
+`makeJSONResponse` method in ActivityProvider.java will make a JSON response which
 schema of my own design is:
+
+```
 {
     result: <a boolean value true or false>,
     name: <a string value>,
@@ -124,26 +130,26 @@ schema of my own design is:
     type: <a string value>,
     message: <a string value>
 }
+```
+
 In android client I use the boolean value result to check whether the request succeeded or not. And message is used to show error message while result is false.
+
 Name is the name of an activity.
 Id is the key code of an activity.
 Type is the type of an activity.
 
 ## Task 2: Web Service Logging and Analysis Dashboard
 
-
-For Task 2, you are to embellish your web service to add logging, analysis, and reporting capabilities.  In other words, you are to create a web-based dashboard to your web service that will display information about how your service is being used. This will be web-page interface designed for laptop or desktop browser, not for mobile. In order to display logging and analytical data, you will have to first store it somewhere.  For this task, you are required to store your data in a noSQL database, or more specifically a MongoDB, database hosted in the cloud.
+For Task 2, you are to embellish your web service to add logging, analysis, and reporting capabilities. In other words, you are to create a web-based dashboard to your web service that will display information about how your service is being used. This will be web-page interface designed for laptop or desktop browser, not for mobile. In order to display logging and analytical data, you will have to first store it somewhere.  For this task, you are required to store your data in a noSQL database, or more specifically a MongoDB, database hosted in the cloud.
 
 The following is a diagram of the components in Task 2.
+
 ![](image/Diagram2.png)
 
-My application takes a username string from the user, and to give user recommend activity by clicking“Find Activity”Button. User is able to choose“Do it”or“ Try another activity”by clicking the corresponding button and also able to return to find activity just by clicking“Back to find activity”button.
-And my web application will record all operations from clients. Those records will be processed by analysis functions. User will first see three tables of analysis, they are“High frequency Activity Types TOP 10”,“Just DO IT Activities TOP 10”and“DISLIKE Activities
-TOP 10”.
-The dashboard URL is:
-https://frozen-castle-25997.herokuapp.com/
-Or
-https://frozen-castle-25997.herokuapp.com/index.jsp
+My application takes a username string from the user, and to give user recommend activity by clicking "Find Activity" Button. User is able to choose "Do it" or "Try another activity" by clicking the corresponding button and also able to return to find activity just by clicking “Back to find activity" button.
+And my web application will record all operations from clients. Those records will be processed by analysis functions. User will first see three tables of analysis, they are "High frequency Activity Types TOP 10", "Just DO IT Activities TOP 10" and "DISLIKE Activities TOP 10".
+The dashboard URL is: https://frozen-castle-25997.herokuapp.com/
+Or https://frozen-castle-25997.herokuapp.com/index.jsp
 
 1. Log useful information
    ![](image/format.png)
@@ -157,6 +163,7 @@ https://frozen-castle-25997.herokuapp.com/index.jsp
    Both these two classes have empty constructor methods that will ensure mongodb lib being able to create POJOs.
    Then all operations with mongodb will be easier and better understanding.
    An example of POJO class:
+   ```
    public class BoringActivity {
    private String activityName;
    private String activityType;
@@ -169,36 +176,28 @@ https://frozen-castle-25997.herokuapp.com/index.jsp
    public void setActivityId(String value) { activityId = value; }
    public BoringActivity() { }
    }
+   ```
    An example of inserting to collections:
-   // get infos collection
-   MongoCollection<ActivityLog> collection = db.getCollection("infos", ActivityLog.class);
-   // insert log record
-   co ec  on. nser One _ n o ;
+   ```
+   // get infos collection 
+   MongoCollection<ActivityLog> collection = db.getCollection("infos", ActivityLog.class); 
+   // insert log record 
+   collection.insertOne(_info);
+   ```
 
 
-
-
-
-
-3. Display operations analytics and full
-   logs on a web-based dashboard
+## 3. Display operations analytics and full logs on a web-based dashboard
    Here is a screenshot of how they being displayed to user:
 
 
-3.1 A    unique    URL    addresses    a    web    interface
-dashboard for the web service.
+## 3.1 A unique URL addresses a web interface dashboard for the web service.
 
-The unique URL address is:
-https://frozen-castle-25997.herokuapp.com/index.jsp
+The unique URL address is: https://frozen-castle-25997.herokuapp.com/index.jsp
 
 
+## 3.2 The dashboard displays at least 3 interesting operations analytics.
 
-
-
-3.2 The  dashboard  displays  at   least  3   interesting
-operations analytics.
-
-“High frequency Activity Types TOP 10”,“Just DO IT Activities TOP 10”and“DISLIKE Activities TOP 10”are my 3 interesting operations analytics.
+"High frequency Activity Types TOP 10", "Just DO IT Activities TOP 10" and "DISLIKE Activities TOP 10”are my 3 interesting operations analytics.
 High frequency Activity Types TOP 10:
 Among those random activities I grouped them by the types of activities. And counted the getting times of type of activity. Sorted by getting times by descending order.
 Just DO IT Activities TOP 10: The top 10 activities user clicked“DO IT!”button to.           DISLIKE Activities TOP 10: The top 10 activities user clicked“TRY ANOTHER”button to.
