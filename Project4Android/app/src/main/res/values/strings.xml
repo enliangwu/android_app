@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Project4Android</string>
+    <string name="tip">If you feel badly boring, just click the button below to find an activity.</string>
+    <string name="find_activity">Find Activity</string>
+    <string name="do_it">DO IT!</string>
+    <string name="try_another">TRY ANOTHER</string>
+    <string name="button">BACK TO FIND ACTIVITY</string>
+</resources>
