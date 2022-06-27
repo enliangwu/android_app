@@ -28,6 +28,7 @@ The name of my native Android application project in Android Studio is: Project4
 My Application uses TextView, EditText, Button views. 
 See content_main.xml for details. 
 Here is a screenshot of the layout before user has found any activity.
+
 ![](image/Picture1.png)
 
 ### 1.2  Requires input from the user
@@ -117,7 +118,7 @@ It will reply a JSON formatted random activity information to my web application
     accessibility: 0.05
 }
 ```
-ActivityProvider.java will package the useful information to android client.
+`ActivityProvider.java` will package the useful information to android client.
 
 ### 2.4  Replies to the Android application with an XML or JSON formatted response. The schema of the response can be of your own design.
 `makeJSONResponse` method in ActivityProvider.java will make a JSON response which
@@ -133,7 +134,7 @@ schema of my own design is:
 }
 ```
 
-In android client I use the boolean value result to check whether the request succeeded or not. And message is used to show error message while result is false.
+In android client, I use the boolean value result to check whether the request succeeded or not. And message is used to show error message while result is false.
 
 Name is the name of an activity.
 Id is the key code of an activity.
@@ -141,7 +142,7 @@ Type is the type of an activity.
 
 ## Task 2: Web Service Logging and Analysis Dashboard
 
-For Task 2, you are to embellish your web service to add logging, analysis, and reporting capabilities. In other words, you are to create a web-based dashboard to your web service that will display information about how your service is being used. This will be web-page interface designed for laptop or desktop browser, not for mobile. In order to display logging and analytical data, you will have to first store it somewhere.  For this task, you are required to store your data in a noSQL database, or more specifically a MongoDB, database hosted in the cloud.
+For Task 2, you are to embellish your web service to add logging, analysis, and reporting capabilities. In other words, you are to create a web-based dashboard to your web service that will display information about how your service is being used. This will be web-page interface designed for laptop or desktop browser, not for mobile. In order to display logging and analytical data, you will have to first store it somewhere.  For this task, you are required to store your data in a NoSQL database, or more specifically a MongoDB, database hosted in the cloud.
 
 The following is a diagram of the components in Task 2.
 
@@ -152,12 +153,12 @@ And my web application will record all operations from clients. Those records wi
 The dashboard URL is: https://frozen-castle-25997.herokuapp.com/
 Or https://frozen-castle-25997.herokuapp.com/index.jsp
 
-1. Log useful information
+## 1. Log useful information
 
 ![](image/format.png)
 
 
-2. Store the log information in a database
+## 2. Store the log information in a database
    I use InfoStore class to implement all operations with mongodb in InfoStore.java class Module.
    I use POJO classes to store and retrieve data from mongodb.
    I created to POJO classes: BoringActivity and ActivityLog.
@@ -195,12 +196,12 @@ Or https://frozen-castle-25997.herokuapp.com/index.jsp
    ![](image/dashboard_ranking2.png)
 
 
-## 3.1 A unique URL addresses a web interface dashboard for the web service.
+### 3.1 A unique URL addresses a web interface dashboard for the web service.
 
 The unique URL address is: https://frozen-castle-25997.herokuapp.com/index.jsp
 
 
-## 3.2 The dashboard displays at least 3 interesting operations analytics.
+### 3.2 The dashboard displays at least 3 interesting operations analytics.
 
 "High frequency Activity Types TOP 10", "Just DO IT Activities TOP 10" and "DISLIKE Activities TOP 10" are my 3 interesting operations analytics.
 
@@ -209,7 +210,7 @@ Just DO IT Activities TOP 10: The top 10 activities user clicked "DO IT!" button
 DISLIKE Activities TOP 10: The top 10 activities user clicked "TRY ANOTHER" button to.
 
 
-## 3.3 The dashboard displays formatted full logs.
+### 3.3 The dashboard displays formatted full logs.
 
 Considering a mess of things will show in dashboard page, I moved full logs to another url which is https://frozen-castle-25997.herokuapp.com/logs.jsp and there also a link in dashboard page.
 ```
@@ -235,6 +236,6 @@ Here is a screenshot of full logs page:
 
 ## 4. Deploy the web service to Heroku
    I used a tomcat docker image to deploy to Heroku.
-   ROOT.war package and tomcat_starter.sh script are built into this image.
-   After my docker image being pushed to Heroku web application“frozen-castle-25997”. 
+   `ROOT.war` package and `tomcat_starter.sh` script are built into this image.
+   After my docker image being pushed to Heroku web application `frozen-castle-25997`. 
    My web service is available at: https://frozen-castle-25997.herokuapp.com/
