@@ -21,12 +21,12 @@ User is able to choose "Do it" or "Try another activity" by clicking the corresp
 
 ## 1.  Implement a native Android application
 
-The name of my native Android application project in Android Studio is: Project4Android
+The name of my native Android application project in Android Studio is: `Project4Android`
 
 ### 1.1  Has at least three different kinds of Views in My Layout
 
-My Application uses TextView, EditText, Button views. 
-See content_main.xml for details. 
+My Application uses `TextView`, `EditText`, `Button views`. 
+See `content_main.xml` for details. 
 Here is a screenshot of the layout before user has found any activity.
 
 ![](image/Picture1.png)
